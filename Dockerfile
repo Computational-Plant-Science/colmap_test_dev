@@ -50,29 +50,7 @@ RUN cd colmap && \
     ninja install && \
     cd .. && rm -rf colmap
 
-#
-# Docker runtime stage.
-#
-FROM nvidia/cuda:12.2.2-devel-ubuntu22.04 as runtime
-
-# Minimal dependencies to run COLMAP binary compiled in the builder stage.
-# Note: this reduces the size of the final image considerably, since all the
-# build dependencies are not needed.
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends --no-install-suggests \
-        libboost-program-options1.74.0 \
-        libc6 \
-        libceres2 \
-        libfreeimage3 \
-        libgcc-s1 \
-        libgl1 \
-        libglew2.2 \
-        libgoogle-glog0v5 \
-        libqt5core5a \
-        libqt5gui5 \
-        libqt5widgets5 \
-        libcurl4
-        
+      
         
 # Copy all files into the docker container
 COPY . /opt/code
