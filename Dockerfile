@@ -3,7 +3,7 @@
 # Create date: 02202025
 
 
-FROM nvidia/cuda:12.2.2-devel-ubuntu22.04 as builder
+FROM nvidia/cuda:12.2.2-devel-ubuntu22.04
 
 # setup Colmap version and CUDA version for ubuntu22.04
 ARG COLMAP_VERSION=3.9
@@ -34,7 +34,8 @@ RUN apt-get update && apt-get install -y \
     qtbase5-dev \
     libqt5opengl5-dev \
     libcgal-dev \
-    libceres-dev 
+    libceres-dev \
+    libcurl4-openssl-dev
 
 
 
@@ -72,16 +73,7 @@ RUN apt-get update && \
         libqt5widgets5 \
         libcurl4
         
-# Copy all files from /colmap-install/ in the builder stage to /usr/local/ in
-# the runtime stage. This simulates installing COLMAP in the default location
-# (/usr/local/), which simplifies environment variables. It also allows the user
-# of this Docker image to use it as a base image for compiling against COLMAP as
-# a library. For instance, CMake will be able to find COLMAP easily with the
-# command: find_package(COLMAP REQUIRED).
-
-COPY --from=builder /colmap-install/ /usr/local/
-
-
+        
 # Copy all files into the docker container
 COPY . /opt/code
 WORKDIR /opt/code
