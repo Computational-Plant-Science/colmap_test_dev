@@ -34,7 +34,8 @@ RUN apt-get update && apt-get install -y \
     qtbase5-dev \
     libqt5opengl5-dev \
     libcgal-dev \
-    libceres-dev
+    libceres-dev \
+    libcurl4-openssl-dev
 
 
 
