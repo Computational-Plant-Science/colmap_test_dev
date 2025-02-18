@@ -3,7 +3,7 @@
 # Create date: 02202025
 
 
-FROM nvidia/cuda:12.2.2-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.2-devel-ubuntu22.04 as builder
 
 # setup Colmap version and CUDA version for ubuntu22.04
 ARG COLMAP_VERSION=3.9
@@ -34,8 +34,7 @@ RUN apt-get update && apt-get install -y \
     qtbase5-dev \
     libqt5opengl5-dev \
     libcgal-dev \
-    libceres-dev \
-    libcurl4-openssl-dev
+    libceres-dev 
 
 
 
