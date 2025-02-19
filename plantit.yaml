@@ -1,0 +1,27 @@
+name: colmap_test_dev
+author: Suxing Liu
+image: docker://computationalplantscience/colmap_test_dev
+public: True
+  
+commands: /opt/code/colmap_pipeline.sh
+
+
+input:
+  path:
+  kind: directory
+  filetypes:
+    - jpg
+    - png
+output:
+  path:
+  include:
+    patterns:
+      - ply
+
+gpu: True
+
+jobqueue:
+  walltime: "4:00:00"
+  memory: "48GB"
+  processes: 1
+  cores: 1

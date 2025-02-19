@@ -81,7 +81,3 @@ RUN apt-get update && \
 # a library. For instance, CMake will be able to find COLMAP easily with the
 # command: find_package(COLMAP REQUIRED).
 COPY --from=builder /colmap-install/ /usr/local/
-
-
-COPY . /opt/code
-WORKDIR /opt/code
