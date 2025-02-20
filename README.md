@@ -152,7 +152,7 @@ and [COLMAP setup](https://colmap.github.io/faq.html)
 
 and [UA HPC GPUs](https://hpcdocs.hpc.arizona.edu/running_jobs/batch_jobs/batch_directives/#gpus)
 
-and [NVIDIA Developer Program, GPU Compute Capability)](https://developer.nvidia.com/cuda-gpus)
+and [NVIDIA Developer Program, GPU Compute Capability](https://developer.nvidia.com/cuda-gpus)
 
 
 # Note: 
