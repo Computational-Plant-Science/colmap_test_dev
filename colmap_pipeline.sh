@@ -1,5 +1,7 @@
-# Summary: 3D reconstruction pipeline using Colmap based on CUP or GPU on HPC(Puma)
+# Summary: 3D reconstruction pipeline using Colmap, tested with GPU nodes on HPC(Puma)
+
 # Author: Suxing Liu
+
 # Create date: 02202025
 
 # feature extraction
