@@ -57,7 +57,11 @@ We needs a CUDA_ARCH_BIN flag to be set in order to compile the binaries with th
 
 If this flag is not set correctly, the final use of the binaries would fail. [Reference NVIDIA Developer Program (Your GPU Compute Capability)](https://developer.nvidia.com/cuda-gpus)
 
-The Docker recipe file was in "Dockerfile", and DockerHub (computationalplantscience/3d_colmap) was setup linked to this repo directly and in automatic trigger compile mode.
+For example, Volta GPU (v100), NVIDIA V100 has Compute Capability as 7.0 
+
+or one A100 MIG slice, NVIDIA A100 has Compute Capability as 8.0 
+
+The Docker recipe file was created as "Dockerfile", and DockerHub (computationalplantscience/3d_colmap) was setup linked to this repo directly and in automatic trigger compile mode.
  
 The Colmap pipeline was in bash file "colmap_pipeline.sh"
 
