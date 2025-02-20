@@ -1,15 +1,17 @@
+# Author: Suxing Liu
+# Create date: 02202025
 
-
+# specify the correct gpu and cuda compute architecture
 ARG UBUNTU_VERSION=22.04
 ARG NVIDIA_CUDA_VERSION=12.6.1
 
 #
 # Docker builder stage.
 #
-FROM nvidia/cuda:${NVIDIA_CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} as builder
+FROM nvidia/cuda:${NVIDIA_CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} AS builder
 
 ARG COLMAP_GIT_COMMIT=main
-ARG CUDA_ARCHITECTURES=70
+ARG CUDA_ARCHITECTURES=80
 ENV QT_XCB_GL_INTEGRATION=xcb_egl
 
 # Prevent stop building ubuntu at time zone selection.
@@ -54,7 +56,7 @@ RUN cd colmap && \
 #
 # Docker runtime stage.
 #
-FROM nvidia/cuda:${NVIDIA_CUDA_VERSION}-runtime-ubuntu${UBUNTU_VERSION} as runtime
+FROM nvidia/cuda:${NVIDIA_CUDA_VERSION}-runtime-ubuntu${UBUNTU_VERSION} AS runtime
 
 # Minimal dependencies to run COLMAP binary compiled in the builder stage.
 # Note: this reduces the size of the final image considerably, since all the

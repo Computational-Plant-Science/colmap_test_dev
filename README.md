@@ -55,7 +55,7 @@ This docker was tested on GPU node in Puma HPC. It will automatically detect the
 
 We needs a CUDA_ARCH_BIN flag to be set in order to compile the binaries with the correct CUDA architecture. 
 
-If this flag is not set correctly, the final use of the binaries would fail. [Reference NVIDIA Developer Program (Your GPU Compute Capability)](https://developer.nvidia.com/cuda-gpus)
+If this flag is not set correctly, the final use of the binaries would fail. 
 
 For example, Volta GPU (v100), NVIDIA V100 has Compute Capability as 7.0 
 
@@ -139,17 +139,22 @@ Suxing Liu (suxingliu@gmail.com)
 
 ## Other contributions
 
-Docker container was maintained and deployed to [PlantIT](https://portnoy.cyverse.org) by Wes Bonelli (wbonelli@uga.edu).
+Docker container was maintained and deployed to [PlantIT](https://portnoy.cyverse.org) by Wes Bonelli (wbonelli@ucar.edu).
 
 # License
 GNU Public License
 
 # Docker recipe 
 
-This docker recipe was developed based on COLMAP official documents:
+This docker recipe was developed based on [COLMAP official documents](https://github.com/colmap/colmap/tree/main/docker)
 
-https://github.com/colmap/colmap/tree/main/docker  
+and [COLMAP setup](https://colmap.github.io/faq.html) 
+
+and [UA HPC GPUs](https://hpcdocs.hpc.arizona.edu/running_jobs/batch_jobs/batch_directives/#gpus)
+
+and [NVIDIA Developer Program, GPU Compute Capability)](https://developer.nvidia.com/cuda-gpus)
 
 
 # Note: 
+
 This repo was to replace the old one "Computational-Plant-Science/3D_model_reconstruction_demo" which has compatible issue after HPC Puma upgraded to new OS sysytem. 
