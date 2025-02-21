@@ -22,6 +22,6 @@ gpu: True
 
 jobqueue:
   walltime: "4:00:00"
-  memory: "48GB"
+  memory: "64GB"
   processes: 1
   cores: 1
