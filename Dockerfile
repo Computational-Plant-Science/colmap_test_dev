@@ -10,6 +10,8 @@ ARG NVIDIA_CUDA_VERSION=12.6.1
 #
 FROM nvidia/cuda:${NVIDIA_CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} AS builder
 
+
+# Setup host machine using correct cuda paramters, Reference NVIDIA Developer Program, GPU Compute Capability
 ARG COLMAP_GIT_COMMIT=main
 ARG CUDA_ARCHITECTURES=70
 ENV QT_XCB_GL_INTEGRATION=xcb_egl
@@ -84,6 +86,6 @@ RUN apt-get update && \
 # command: find_package(COLMAP REQUIRED).
 COPY --from=builder /colmap-install/ /usr/local/
 
-
+# Copy all files in Github repository inside the docker container
 COPY . /opt/code
 WORKDIR /opt/code
